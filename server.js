@@ -55,10 +55,6 @@ app.put('/items/:id', function(req, res) {
 		return res.status(400).json({
 			message: 'Bad Request'
 		});
-	} else {
-		return.res.status(400).json({
-			message: 'Bad Request'
-		});
 	}
 });
 

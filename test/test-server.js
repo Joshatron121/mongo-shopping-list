@@ -224,8 +224,8 @@ describe('Shopping List', function() {
     })
     it('should exit gracefully if no body data is given', function(done) {
     	chai.request(app)
-    		.put('/items/1')
-    		.send()
+    		.put('/items/' + id)
+    		.send('')
     		.end(function(err,res) {
     			err.should.have.status(400);
 			})
