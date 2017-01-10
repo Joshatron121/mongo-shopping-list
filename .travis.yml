@@ -8,3 +8,10 @@ addons:
     - mongodb-3.2-precise
     packages:
     - mongodb-org-server
+deploy:
+  provider: heroku
+  api_key:
+    secure: eAkEwDpxaPVN2n+rfZdoA8ai/ER4AtPx9WJuTuM9isd5poTRkmLdihWh065UMUvh7W6ExRWjbr9wZC4qgzgV1e8F0ut0yzhz4zhZ8LL4guRHTXkjL5gJYEGu62cmA/yeyP3Qpcr1QHqtordPSKCvrIEMa24rMYmx+iwUFl41qBUQrPF+J/RWSajnxoEK9ZJXC+a5X61QtLESn9sdianRGIAtmsUssCQDRVyb1l+nM4OzwMvMnpqFA8jehH3UQBiAwsLriERlEuspfRiOa4jeWQDuKpE1FdGGtkqPYw50lSUgAWCCOa37f89jfk8UMiOfeNTVvTKuWLkse73MhAtqxyN9CQVN8DVh7wx40M82Rwe6AHdeNhT0/OF+eNHaV6+BvP8n8pp/SmIxS4rwAdVyGg5KqKrH7jvVE68FXcQZ6WEqWbg2UqZd9sN9TexsU6zay3XWiFm0vALO8dfkCVqo+jngITOpriklMvTc7yEpmyF7qdGYFSGAlZrvSQlgZojvFCl7DCpKT9pUOibGGcId9bwulZU276GO8JZk7ELeuQz06CiU+R9yiLXI5VuNguLOlo4W6ZZagH/go+HI3BwMmAQEfkH6M7ZNnDPvNpX7sZaoM/+FispgkXso3gDRfEdWXm0EZrmn88XXFilrUgzwbrw9Hvie+ebl8yzveXr30YI=
+  app: pure-garden-91469
+  on:
+    repo: Joshatron121/mongo-shopping-list
