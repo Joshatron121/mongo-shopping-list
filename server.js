@@ -36,21 +36,32 @@ app.post('/items', function(req, res) {
 });
 
 app.put('/items/:id', function(req, res) {
-	Item.findByIdAndUpdate(
-		req.body.id
-	, {
-		name: req.body.name
-	}, function(err, item) {
-		if (err) {
-			return res.status(500).json({
-				message: 'Internal Server Error'
-			});
-		}
-		res.status(201).json(item);
-	});
+	var paramsId = req.params.id;
+	var bodyId = req.body.id;
+	if (!paramsId || !bodyId || paramsId == bodyId) {
+		Item.findByIdAndUpdate(
+			req.body.id
+		, {
+			name: req.body.name
+		}, function(err, item) {
+			if (err) {
+				return res.status(500).json({
+					message: 'Internal Server Error'
+				});
+			}
+			res.status(201).json(item);
+		});
+	} else {
+		return res.status(400).json({
+			message: 'Bad Request'
+		});
+	}
 });
 
 app.delete('/items/:id', function(req, res) {
+	if(req.params.id == null) {
+		return res.status(404)
+	}
 	Item.findByIdAndRemove(
 		req.params.id
 	, function(err, item) {
