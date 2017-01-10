@@ -38,7 +38,7 @@ app.post('/items', function(req, res) {
 app.put('/items/:id', function(req, res) {
 	var paramsId = req.params.id;
 	var bodyId = req.body.id;
-	if (!paramsId || !bodyId || paramsId == bodyId) {
+	if (!(paramsId) || !(bodyId) || paramsId == bodyId) {
 		Item.findByIdAndUpdate(
 			req.body.id
 		, {

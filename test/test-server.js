@@ -224,10 +224,10 @@ describe('Shopping List', function() {
     })
     it('should exit gracefully if no body data is given', function(done) {
     	chai.request(app)
-    		.put('/items/' + id)
+    		.put('/items/')
     		.send('')
     		.end(function(err,res) {
-    			err.should.have.status(400);
+    			err.should.have.status(404);
 			})
 		chai.request(app)
 			.get('/items')
